@@ -8,9 +8,6 @@ import { Product } from '../../shared/model/product.model';
 import {SingleProductOrder} from '../../shared/model/singleProductOrder.model';
 import {AddressModel} from '../../account-info/address/address.model';
 import {Order} from '../../shared/model/order.model';
-
-
-
 @Component({
   selector: 'app-place-order',
   templateUrl: './place-order.component.html',

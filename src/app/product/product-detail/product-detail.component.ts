@@ -89,7 +89,7 @@ export class ProductDetailComponent implements OnInit {
       if (JSON.parse(sessionStorage.getItem('login'))) {
       this.addToCartServer(userId, item, productId, moq);
       } else {
-        this.addToCartLocal(item, productId, moq);
+     /*    this.addToCartLocal(item, productId, moq); */
       }
     } else {
       setTimeout(() => {
@@ -141,7 +141,6 @@ export class ProductDetailComponent implements OnInit {
         /* cart_product.push(this.productModel); */
       });
       cartDetail.map(element => {
-        
             if (cartLocal.find(s => s.skuCode === element.skuDetail.skuCode)) {
               const dbSame = cartLocal.find(s => s.skuCode === element.skuDetail.skuCode);
               dbSame.set += element.set;

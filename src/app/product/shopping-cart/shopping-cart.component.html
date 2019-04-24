@@ -1,70 +1,25 @@
-<!-- <div class="m-5">
-  <div class="row">
-    <div class="col-md-10">
-      <div class="row gridImage" *ngFor="let data of shopModel">
-        <div class="col-md-2"><img class="img-fluid" [src]="data?.productImageName">
-        </div>
-        <div class="col-md-3">
-          <h4 class="product-name"><strong>{{data?.productName }}</strong></h4>
-          <h4><small>{{data?.productDescription}}</small></h4>
-          <h4><small>{{data?.price}} / piece</small></h4>
-          <h4>
-            <p class="card-text"> 1 set = {{ data.moq }} pieces</p>
-          </h4>
 
-        </div>
-        <div class="col-md-1">
+<div class="row" >
+    <div class="col-md-9">
 
-          <p class="card-text"> {{ data.moq * data.set}} pieces</p>
-
-        </div>
-        <div class="col-md-2">
-          <div class="input-group">
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" (click)="action('min', data)"
-                [disabled]="data.set < 0">
-                <span><i class="fa fa-minus" aria-hidden="true"></i></span>
-              </button>
-            </span>
-            <input type="text" [disabled]="true" class="form-control input-number" [value]="data.set">
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"
-                (click)="action('add', data)">
-                <span><i class="fa fa-plus" aria-hidden="true"></i></span>
-              </button>
-            </span>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <button type="button" class="btn btn-default btn-number" (click)="action('clear', data)">
-            <i class="fa fa-trash fa-1x" aria-hidden="true"></i>
-          </button>
-        </div>
-        <div class="col-md-2">
-          {{data.price *data.moq * data.set}}
-        </div>
-
-      </div>
-
-      <div *ngIf="shopModel?.length === 0">
-        Your Cart is Empty
-      </div>
     </div>
-    <div class="col-md-2" *ngIf="shopModel?.length !== 0">
-      <div class="row gridImage">
-        <div class="col-md-12"> Order Summary</div>
-        <div class="col-md-12 pull-right">
-          <strong>Total: {{total()}}</strong>
+    <div class="col-md-3">
+      <mat-card class="m-0">
+        <div class="line mb-1">
+          <span class="fw-500">Subtotal: </span>
+          <span class="text-muted float-right"> {{subTotal}}</span>
         </div>
-        <div class="col-md-12 pull-right">
-            <button mat-raised-button color="primary"  class="btnn" (click)="placeOrder()">
-               Place Order  </button>
-          </div>
-      </div>
+        <mat-divider class=""></mat-divider>
+        <div class="line mb-1 pt-1">
+          <span class="fw-500">Total:</span>
+          <span class="text-muted float-right">{{subTotal}}</span>
+        </div>
+        <mat-card-actions>
+          <button mat-raised-button color="warn" (click)="orderPlaced()">Place Order</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
-</div> -->
-
 <div class="border">
   <div class="row">
     <div class="col-sm-2 col-2 pt-2 pb-2">

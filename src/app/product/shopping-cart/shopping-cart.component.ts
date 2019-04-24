@@ -6,7 +6,8 @@ import { initNgModule } from '@angular/core/src/view/ng_module';
 import {MOQ} from '../../shared/model/moq.model';
 import { Router } from '@angular/router';
 import { AppSetting } from '../../config/appSetting';
-
+import { element } from '@angular/core/src/render3';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -18,8 +19,10 @@ export class ShoppingCartComponent implements OnInit {
   cartModel: Cart;
   userId;
   moqModel: MOQ;
+  subTotal  = 0;
+  action;
   productImageUrl: string = AppSetting.productImageUrl;
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService, private router: Router, private matSnackBar: MatSnackBar) { }
 
   ngOnInit() {
     if (JSON.parse(sessionStorage.getItem('login'))) {
@@ -85,8 +88,8 @@ export class ShoppingCartComponent implements OnInit {
     this.cartModel.userId = this.userId;
     this.cartModel.skuDetail = totalItem;
     this.productService.addToCart(this.cartModel).subscribe(data => {
-      this.shopModel = data;
-      this.total();
+    this.shopModel = data;
+    this.total();
     }, error => {
       console.log(error);
     });
@@ -117,30 +120,40 @@ export class ShoppingCartComponent implements OnInit {
     sessionStorage.setItem('cart', JSON.stringify(this.shopModel));
   }
   total() {
-    let sum = 0;
+    /* let sum = 0; */
 
     if (JSON.parse(sessionStorage.getItem('login'))) {
       this.totalQty();
     } else {
-      const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+      /* const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
       cart.map(item => {
         sum += item.set * item.moq * item.price;
       });
-      return sum;
+      return sum; */
     }
+  }
+  orderPlaced()   {
+    this.matSnackBar.open('order Placed Successfully', this.action, {
+      duration: 2000,
+    });
+    this.router.navigate(['home/welcome']);
   }
   totalQty() {
     let set = 0;
+    this.subTotal = 0;
+    const totalProduct: any = this.shopModel.map(item => item.cart_product[0]);
+    console.log(totalProduct);
     const totalSet = this.shopModel.map(item => item.skuDetail);
     totalSet.map(item => {
       set += item.set;
+      const priceSingle = totalProduct.find(test =>  test._id === item.productId);
+      this.subTotal += item.set * item.moq  * priceSingle.price;
     });
     sessionStorage.setItem('set', JSON.stringify(set));
   }
   shoppingCartUser(userId) {
     this.productService.shoppingUser(userId).subscribe(data => {
     this.shopModel = data;
-    sessionStorage.setItem('samplecart', JSON.stringify(this.shopModel));
     this.total();
     }, err => {
       console.log(err);

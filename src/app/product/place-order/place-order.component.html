@@ -3,7 +3,7 @@
   <form [formGroup]="orderForm" novalidate style="padding-top:60px">
     <div class="container-fluid ">
       <div class="row ">
-      <div class="form-group col-md-5 col-sm-12 " *ngIf="addAddressDetails" >
+        <div class="form-group col-md-5 col-sm-12 " *ngIf="addAddressDetails">
           <div>
             <h3>Add New Address</h3>
           </div>
@@ -108,57 +108,57 @@
             </mat-form-field>
           </div>
           <div class="col-md-12 pull-right">
-              <button mat-raised-button color="primary"  class="btnn" (click)="onSubmit()">
-                Save  </button>
-            </div>
-        </div> 
+            <button mat-raised-button color="primary" class="btnn" (click)="onSubmit()">
+              Save </button>
+          </div>
+        </div>
         <div class="form-group col-md-4 col-sm-12 " *ngIf="!addAddressDetails">
 
-       
-            <div  *ngFor="let data of billingDetails" class="pageBoxLg">
-              <b>Delivery Address</b>
-             <div>
-               <b> {{data.name}}</b>
-             </div>
-            
-    
-             <div>
-                {{data.building}}
-             </div> 
-             <div>
-                {{data.streetAddress}}
-             </div> 
-             <div>
-                {{data.landmark}}
-             </div>  
-             <div>
-                {{data.city}} - {{data.pincode}}
-             </div>
-             <div>
-                {{data.state}}
-             </div>
-              <div>
-             Mobile Number : <b>{{data.mobileNumber}}</b> 
-             </div>
+
+          <div *ngFor="let data of billingDetails" class="pageBoxLg">
+            <b>Delivery Address</b>
+            <div>
+              <b> {{data.name}}</b>
+            </div>
+
+
+            <div>
+              {{data.building}}
+            </div>
+            <div>
+              {{data.streetAddress}}
+            </div>
+            <div>
+              {{data.landmark}}
+            </div>
+            <div>
+              {{data.city}} - {{data.pincode}}
+            </div>
+            <div>
+              {{data.state}}
+            </div>
+            <div>
+              Mobile Number : <b>{{data.mobileNumber}}</b>
             </div>
           </div>
-    <div class="form-group col-md-5 col-sm-12 pageBoxLg" >
+        </div>
+        <div class="form-group col-md-5 col-sm-12 pageBoxLg">
           <div>
             <b>Product Details</b>
           </div>
           <div class="row">
             <div class="col-md-7">
-                Product
+              Product
             </div>
             <div class="col-md-2 ">
-                Quantity
-              </div>
+              Quantity
+            </div>
             <div class="col-md-2 ">
               Total
             </div>
 
           </div>
-          <div class="row" *ngFor="let data of orderSummary">  
+          <div class="row" *ngFor="let data of orderSummary">
             <div class="col-md-3">
               <img class="img-fluid" style="height: 100px;width:100px;" [src]="data?.productImageName">
             </div>
@@ -166,22 +166,22 @@
               <p>{{data?.productName}}</p>
             </div>
             <div class="col-md-2">
-                <p>{{data?.set * data?.moq }}</p>
-              </div>
+              <p>{{data?.set * data?.moq }}</p>
+            </div>
             <div class="col-md-2">
-               
+
               <h5>{{data?.set * data?.moq * data?.price}}</h5>
             </div>
           </div>
           <div>
-              <b>Price Details</b>
-            </div>
+            <b>Price Details</b>
+          </div>
           <div class="row">
             <div class="col-md-9 ">
               SubTotal
             </div>
             <div class="col-md-2 ">
-                <h4> {{total()}}</h4>
+              <h4> {{total()}}</h4>
             </div>
           </div>
           <div class="row">
@@ -197,24 +197,24 @@
               Total
             </div>
             <div class="col-md-2 ">
-                <input  formControlName="productPrice" hidden [value]="productModel?.price"  #priceValue  >
+              <input formControlName="productPrice" hidden [value]="productModel?.price" #priceValue>
               <h3>{{total()}}</h3>
             </div>
           </div>
-         
+
           <div class="row">
             <div class="col-md-6 ">
               <!-- <button class="btn btn-float-right card-footer" [disabled]="!orderForm.valid"
                 (click)="placeOrder(productModel, qtyValue.value)">Place Order</button> -->
-                <button mat-raised-button color="primary" [disabled]="!orderForm.valid"  class="btnn" (click)="placeOrder(totalpriceValue)">
-                    Confirm Order  </button>
+              <button mat-raised-button color="primary" [disabled]="!orderForm.valid" class="btnn"
+                (click)="placeOrder(totalpriceValue)">
+                Confirm Order </button>
             </div>
 
           </div>
-        </div> 
-        
-      </div>
+        </div>
 
+      </div>
 
     </div>
   </form>
