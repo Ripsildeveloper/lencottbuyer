@@ -1,0 +1,111 @@
+    <div class="row">
+      <div class="col-md-6">
+        <div class="addButton" (click)="addCard()">
+          ADD CARD
+        </div>
+      </div>
+    </div>
+    <div class="row gridRow border p-2" *ngFor="let card of cardDetailModel">
+      <div class="col-md-6">
+        <div class="text-secondary">
+          <strong>Card Name: </strong><span>{{card.cardName}}</span>
+        </div>
+        <div class="text-secondary"><strong>Card Number: </strong>{{card.cardNumber }}</div>
+        <div class="text-secondary"><strong>Expiry Month: </strong>{{card.expiryMonth }}</div>
+        <div class="text-secondary"><strong>Expiry Year: </strong>{{card.expiryYear }}</div>
+      </div>
+      <!-- div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Name" [value]="address.name"
+               formControlName="name" required #name>
+              <button mat-button matSuffix aria-label="name">
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="mobile number" [value]="address.mobileNumber" formControlName="mobileNumber"
+              #mobileNumber
+                required>
+              <button mat-button matSuffix aria-label="mobileNumber">
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="building" [value]="address.building"
+               formControlName="building" #building required>
+              <button mat-button matSuffix aria-label="building">
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="streetAddress" [value]="address.streetAddress"
+              #streetAddress formControlName="streetAddress"
+                required>
+              <button mat-button matSuffix aria-label="streetAddress">
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="landmark"  [value]="address.landmark" formControlName="landmark" 
+              #landmark required>
+              <button mat-button matSuffix aria-label="landmark">
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="City" [value]="address.city" formControlName="city" 
+              #city
+               required>
+              <button mat-button matSuffix aria-label="city">
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="State" [value]="address.state" formControlName="state" 
+              #state
+              required>
+              <button mat-button matSuffix aria-label="state">
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Pincode" [value]="address.pincode" formControlName="pincode" 
+                #pincode
+                required>
+                <button mat-button matSuffix aria-label="pincode">
+                </button>
+              </mat-form-field>
+            </div>
+        </div>
+        <div class="col-md-12  border-top">
+          <div class="row">
+            <div class="col-md-6 actionClass"
+             (click)="updateAddress(address, name, mobileNumber, building, streetAddress, landmark, city, state, pincode )">
+              Update
+            </div>
+            <div class="col-md-6 actionClass" (click)="cancelAddress(address)">
+              Cancel
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-md-12 border-top">
+        <div class="row">
+          <div class="col-md-6 actionClass">
+            
+          </div>
+          <div class="col-md-6 actionClass" (click)="deleteCard(card._id)">
+            Delete
+          </div>
+        </div>
+      </div>
+    </div>

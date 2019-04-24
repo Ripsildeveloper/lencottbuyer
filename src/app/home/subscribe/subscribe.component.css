@@ -1,0 +1,21 @@
+.subs{
+    text-align: center;
+    color: rgb(146, 140, 140);
+}
+.tagp{
+    text-align: center;
+    color: rgb(182, 182, 182);
+}
+
+.form-control{
+    width: 300px;
+    height: 50px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.form-group{
+    padding-left: 25px;
+    padding-bottom: 55px;
+}

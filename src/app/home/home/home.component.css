@@ -1,0 +1,27 @@
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 30%;
+    width: auto;
+    padding: 10px;
+    margin-top: -22px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 35px;
+    transition: 1s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: contain;
+    display: block;
+}
+
+.next {
+    right: 0;
+    /* border-radius: 3px 0 0 3px; */
+}
+.prev {
+    left: 0;
+    /* border-radius: 3px 0 0 3px; */
+}
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}

@@ -1,0 +1,95 @@
+<!-- <form [formGroup]="cartForm" novalidate style="padding-top:60px">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 col-12">
+      <h4 class="p-2">
+        {{productModel?.productName | titlecase}}
+      </h4>
+    </div>
+    
+    <div class="col-md-4 col-6">
+      <h6 class="productHeading" *ngIf="productModel?.productDescription !== ''">
+        Description
+      </h6>
+    </div>
+    <div class="col-md-6 col-6">
+      <label style="white-space: pre-line; line-height: 20px" *ngIf="productModel?.productDescription !== ''">
+        {{productModel?.productDescription}}
+      </label>
+    </div>
+    <div class="col-md-4 col-12">
+      <h6 class="productHeading" *ngIf="productModel?.material !== '' || productModel?.waterProof !== '' ||
+              productModel?.laptopSize !== '' ||  productModel?.closure !== '' ||  productModel?.compartments !== '' || 
+               productModel?.pockets !== ''">
+        Product Details
+      </h6>
+    </div>
+
+    <div class="col-md-6 col-6">
+      <h6 *ngIf="productModel?.length !== ''"><label>Length</label>: {{productModel?.length}}</h6>
+      <h6 *ngIf="productModel?.breadth !== ''"><label>Breadth</label>: {{productModel?.breadth}}</h6>
+      <h6 *ngIf="productModel?.height !== ''"><label>Height</label>: {{productModel?.height}}</h6>
+      <h6 *ngIf="productModel?.material !== ''"><label>Material</label>: {{productModel?.material}}</h6>
+      <h6 *ngIf="productModel?.waterProof !== ''"><label>WaterProof</label>: {{productModel?.waterProof}}</h6>
+      <h6 *ngIf="productModel?.laptopSize !== ''"><label>LaptopSize</label>: {{productModel?.laptopSize}}</h6>
+      <h6 *ngIf="productModel?.closure !== ''"><label>Closure</label>: {{productModel?.closure}}</h6>
+      <h6 *ngIf="productModel?.compartments !== ''"><label>Compartments</label>: {{productModel?.compartments}}</h6>
+      <h6 *ngIf="productModel?.pockets !== ''"><label>Pockets</label>: {{productModel?.pockets}}</h6>
+    </div>
+    <div class="col-md-6 col-6">
+
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-md-3 col-6 ">
+      <div class="btns">
+        <button mat-raised-button class="btn btn-float-right card-footer"><b>Add to Cart</b>
+           <i class="fa fa-cart-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6 m-5 pageBoxLg">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <h4 class="p-2">
+                    <i class="fa fa-inr" aria-hidden="true"></i> {{productModel?.price }} / Piece
+                  </h4>
+            </span>
+        </div>
+        <div class="input-group">
+            <span class="input-group-btn">
+      
+              <p class="card-text"> 1 set = {{ productModel.moq }} pieces</p>  
+           
+          </span>
+        <div class="input-group">
+            Set Quantity
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-number"
+             (click)="reduceQty(initalVal.value)" [disabled]="setQty === 1" >
+              <span><i class="fa fa-minus" aria-hidden="true"></i></span>
+            </button>
+          </span>
+          <input type="text" [disabled]="true" [(ngModel)]="setQty" formControlName="qty" [value]="initialQty" class="form-control input-number" #initalVal>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-number" 
+            (click)="increaseQty(initalVal.value)" >
+              <span><i class="fa fa-plus" aria-hidden="true"></i></span>
+            </button>
+          </span>
+        </div>
+                <button mat-raised-button color="primary"  (click)="addToCart(productModel)"><b>Add to Cart</b>
+               </button>
+      </div>
+    <div class="col-md-3 col-6">
+      <div class="btnss">
+        <button mat-raised-button class="btn btn-float-right card-footers"
+          (click)="buySingleProducts(productModel._id)"><b>Buy Now</b>
+          <i class="fa fa-bolt" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</form> -->

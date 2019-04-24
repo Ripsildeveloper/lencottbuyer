@@ -1,0 +1,151 @@
+<!-- <div class="m-5">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row gridImage" *ngFor="let data of shopModel">
+        <div class="col-md-2"><img class="img-fluid" [src]="data?.productImageName">
+        </div>
+        <div class="col-md-3">
+          <h4 class="product-name"><strong>{{data?.productName }}</strong></h4>
+          <h4><small>{{data?.productDescription}}</small></h4>
+          <h4><small>{{data?.price}} / piece</small></h4>
+          <h4>
+            <p class="card-text"> 1 set = {{ data.moq }} pieces</p>
+          </h4>
+
+        </div>
+        <div class="col-md-1">
+
+          <p class="card-text"> {{ data.moq * data.set}} pieces</p>
+
+        </div>
+        <div class="col-md-2">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" (click)="action('min', data)"
+                [disabled]="data.set < 0">
+                <span><i class="fa fa-minus" aria-hidden="true"></i></span>
+              </button>
+            </span>
+            <input type="text" [disabled]="true" class="form-control input-number" [value]="data.set">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"
+                (click)="action('add', data)">
+                <span><i class="fa fa-plus" aria-hidden="true"></i></span>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-default btn-number" (click)="action('clear', data)">
+            <i class="fa fa-trash fa-1x" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="col-md-2">
+          {{data.price *data.moq * data.set}}
+        </div>
+
+      </div>
+
+      <div *ngIf="shopModel?.length === 0">
+        Your Cart is Empty
+      </div>
+    </div>
+    <div class="col-md-2" *ngIf="shopModel?.length !== 0">
+      <div class="row gridImage">
+        <div class="col-md-12"> Order Summary</div>
+        <div class="col-md-12 pull-right">
+          <strong>Total: {{total()}}</strong>
+        </div>
+        <div class="col-md-12 pull-right">
+            <button mat-raised-button color="primary"  class="btnn" (click)="placeOrder()">
+               Place Order  </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="border">
+  <div class="row">
+    <div class="col-sm-2 col-2 pt-2 pb-2">
+      <!-- <label></label> -->
+    </div>
+    <div class="col-sm-2 col-2">
+      <label>Product Name</label>
+    </div>
+
+    <!-- *ngIf="shop.skuDetail.skuCode === cart.size" -->
+    <div class="col-sm-2 col-2">
+      <label>SKU Code</label>
+    </div>
+    <div class="col-sm-2 col-2">
+      <label>set</label>
+    </div>
+    <div class="col-sm-1 col-2">
+      <label>Price</label>
+    </div>
+
+    <div class="col-sm-1 col-2">
+      <label>moq</label>
+    </div>
+    <div class="col-sm-2 col-2">
+      <label>Sub total</label>
+    </div>
+
+  </div>
+</div>
+<div class="gridRow border" *ngFor="let shop of shopModel">
+  <div class="row" *ngFor="let cart of shop?.cart_product; let i = index">
+    <div class="col-sm-2 col-2 pt-2 pb-2">
+      <img [src]="productImageUrl +  cart.styleCode +'/'+  cart.productImageName[0]" class="img-fluid"
+        style="width: 50px; height: 50;" />
+    </div>
+    <div class="col-sm-2 col-2">
+      <h5>{{cart.productName}}</h5>
+    </div>
+
+    <!-- *ngIf="shop.skuDetail.skuCode === cart.size" -->
+    <div class="col-sm-2 col-2">
+      <div class="row" *ngFor="let sku of cart.size">
+        <div class="col-sm-12" *ngIf="shop.skuDetail.skuCode === sku.skuCode">
+          <span><small>SKU :{{sku.skuCode}},
+          SIZE :{{sku.sizeName}}</small></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2 col-2">
+      <span class="input-group-btn">
+        
+        <button type="button" class="btn btn-primary btn-sm  btn-number"
+        (click)="actionMinus(cart.productId, shop.skuDetail.skuCode, cart.moq)"
+        [disabled]="shop.skuDetail.set === 1"
+        >
+          <span>-</span>
+        </button>
+      </span>
+      <input type="text" [disabled]="true" min="1" [value]="shop.skuDetail.set" 
+      class="mb-2 text-center input-number" size="1">
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-primary btn-sm  btn-number"
+        (click)="actionPlus(cart.productId, shop.skuDetail.skuCode, cart.moq)" 
+           >
+          <span>+</span>
+        </button>
+      </span>
+    </div>
+    <div class="col-sm-1 col-2">
+      <span>&#x20B9;</span>{{cart.price}}/piece
+    </div>
+
+    <div class="col-sm-1 col-2">
+      {{shop.skuDetail.moq}} piece
+    </div>
+    <div class="col-sm-1 col-1">
+      <span>&#x20B9;</span>{{shop.skuDetail.set * cart.moq * cart.price}}
+    </div>
+    <div class="col-sm-1 col-1">
+        <small (click)="removeCart(shop.skuDetail._id)"  
+        style="cursor: pointer; color: red">Remove</small>
+      </div>
+  </div>
+</div>

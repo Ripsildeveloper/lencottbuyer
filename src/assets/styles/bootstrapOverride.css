@@ -1,0 +1,75 @@
+
+
+.subTitle {
+  font-size: 20px !important;
+  line-height: 22px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0 20px !important;
+
+  font-size: 20px;
+  color: #1d3b48;
+}
+
+.navBar {
+  padding: 0px !important;
+  background-color: #f8f9fa !important;
+  color: #212121 !important;
+  height: 40px !important;
+}
+
+.dropdown-menu {
+  transform: scale(1);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+  padding: 4px;
+  margin: 6px;
+}
+.gridRow {
+  box-shadow: 0 1px 2px 0 #00000033, 0 1px 2px 0 rgba(0, 0, 0, .19);
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.filterRow {
+  box-shadow: 0 1px 2px 0 #00000033, 0 1px 2px 0 rgba(0, 0, 0, .19);
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.gridImage {
+  box-shadow: 0 1px 2px 0 #00000033, 0 1px 2px 0 rgba(0, 0, 0, .19);
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.subHeaderTitle {
+  font-size: 22px;
+  line-height: 32px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+
+
+
+.headerPart {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .19);
+  background-color: #fff;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+
+
+.navbar-light .navbar-nav .navText {
+  color: black;
+}
+
+.navText {
+  color: black;
+}

@@ -1,0 +1,113 @@
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-6">
+      <div class="row" style="padding-top: 20px; width: 100%;">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="padding-top: 20px; width: 100%;">
+          <button mat-button>
+            <div *ngIf="!primeHide">
+              <div class="zoom">
+                <img [src]="productModel?.productImageName[0]" class="img-fluidss">
+              </div>
+            </div>
+            <div *ngIf="showImages">
+              <div class="zoom1">
+                <img [src]="selectedImg" class="img-fluids">
+              </div>
+            </div>
+          </button>
+          <br>
+        </div>
+        <div class="col-3 col-sm-3 col-md-3 col-lg-2" *ngFor="let data of productModel?.productImageName">
+          <button mat-raised-button [ngClass]="{'activeImg' : selectedSmallImg === data}" class="ras-btn"><a><img
+                (mouseover)="clickImg(data)" [src]="data" class="img-fluidsss"></a>
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-12 col-sm-12 col-md-8 col-lg-6 detailsView">
+      <app-product-detail-view [productModel]="productModel">
+      </app-product-detail-view>
+    </div>
+  </div>
+  <br>
+  <div class="row gridRow">
+    <div class="col-12 col-md-12 col-lg-12">
+      <div class="var-btnn">
+        <button mat-raised-button class="variants">
+          <h2 class="relatedSection">Variants</h2>
+        </button>
+      </div>
+    </div>
+    <div class="col-6 col-sm-3 col-md-3 col-lg-2 pointerImage" *ngFor="let data of relatedProducts">
+      <div class="card-var">
+        <a (click)="relatedProduct(data)">
+          <button mat-flat-button class="vat-btn">
+            <div class="zoom2">
+              <img class="img-fluid" [src]="data.productImageName[0]">
+            </div>
+          </button>
+        </a>
+      </div>
+      {{data.productTitle}}
+    </div>
+  </div>
+</div> -->
+
+<div class="row galleryRow">
+  <div class="col-sm-5  productImages">
+
+    <img [src]="productModel?.productImageName[0]" class="responsive">
+
+  </div>
+  <div class="col-sm-7  productDiscription">
+    <h3>{{productModel?.productName}}</h3>
+    <div class="productPrice">
+      <h4><span>&#x20B9;</span> {{productModel?.price}}</h4>
+    </div>
+    <div>
+      <h6>minimum order: {{productModel?.moq}}</h6>
+    </div>
+    <div class="form-group">
+      <label class="mr15"><strong>SIZE:</strong>
+
+      </label>
+
+      <ul class="size-nav mt10" role="tablist">
+        <li role="presentation" *ngFor="let data of productModel?.size">
+          <div class="input-group">
+            <span class="sizeText"><a title="Small">{{data.sizeName}}</a></span>
+            <span class="input-group-btn">
+
+              <button type="button" class="btn btn-primary btn-sm  btn-number"
+                (click)="actionMin(data.skuCode, data.setCount)" [disabled]="!data.setCount > 0">
+                <span>-</span>
+              </button>
+            </span>
+            <input type="text" [disabled]="true" [value]="data.setCount" class="mb-2 text-center input-number"
+              size="10">
+            <!-- <input type="text" class="form-control"  name="name" value="1"> -->
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-primary btn-sm btn-number" data-type="plus" data-field="quant[1]"
+                (click)="actionPlus(data.skuCode)">
+                <span><i class="fa fa-plus" aria-hidden="true">+</i></span>
+              </button>
+            </span>
+          </div>
+        </li>
+
+
+      </ul>
+      <ul class="size-nav mt10">
+        <li role="presentation">
+          <div class="alert alert-danger" role="alert" *ngIf="noPrductAdd">
+            Please Select Product
+          </div>
+          <button (click)="skuProduct(productModel._id, productModel?.moq)" class="addToCartButton">ADD TO CART</button>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>

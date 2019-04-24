@@ -1,0 +1,33 @@
+.cardImageContainer {
+    position: relative;
+    width: 100%;
+}
+.cardImage {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+overflow: hidden;
+}
+
+.imageSize
+{
+    max-width: 100%;
+    height: auto;
+    background-color: #F5F5F6;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.imageDiv
+{
+height: 0;
+padding-top: 100%;
+padding-bottom: 50%;
+overflow: hidden;
+position: relative;
+/* background-color: #EAEAEC; */
+border: 1px solid #e9e9eb;
+}

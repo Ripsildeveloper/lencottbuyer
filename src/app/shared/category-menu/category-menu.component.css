@@ -1,0 +1,30 @@
+.megamenu-li {
+	position: static;
+}
+
+.megamenu {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	right: 0;
+	padding: 15px;
+	border-top: 1px solid #BBBABE;
+}
+.dropdown-item:active {
+background-color:	#282f43 !important;
+}
+.catMenu{
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.subMenu
+{
+	font-size: 11px;
+	text-transform: capitalize;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #ffff !important;
+    text-decoration: none;
+    background-color:	#282f43 !important;
+}

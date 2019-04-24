@@ -1,0 +1,56 @@
+<div class="row" style="margin-left: 15px;">
+  <div class="col-md-12">
+    <div class="card">
+      <p>Filters</p>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="card">
+      <p>Price</p>
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li *ngFor="let data of priceRangeValue">
+              <mat-checkbox (change)="showPriceOptions(data)" [checked]="data === filterPrice">{{data}}</mat-checkbox>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="card">
+      <p>Color</p>
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li *ngFor="let data of color">
+              <mat-checkbox (change)="showColorOptions(data)" [checked]="data === filterColor">{{data}}</mat-checkbox>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="card">
+      <p>Material</p>
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li *ngFor="let data of material">
+              <mat-checkbox (change)="showMaterialOptions(data)" [checked]="data === filterMaterial">{{data}}
+              </mat-checkbox>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

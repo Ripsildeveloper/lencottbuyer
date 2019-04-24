@@ -1,0 +1,57 @@
+<div class="container-fluid footers pt-5">
+  <div class="container">
+    <div class="row footerBorder" *ngFor="let data of footerDetails">
+      <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div>
+          <img [src]="data.logoImageName" style="width:180px" alt="Logo" class="img-fluid">
+        </div>
+        <div class="footers-info mt-3">
+          <p>{{data.address}}</p>
+          <ul class="list-unstyled">
+            <li><a href="maintenance.html"><span><i class="fa fa-phone"
+                    aria-hidden="true"></i></span>{{data.contactNo}}</a></li>
+            <li><a href="contact.html"><span><i class="fa fa-phone"
+                    aria-hidden="true"></i></span>{{data.alternativeContactNo}}</a></li>
+            <li><a href="about.html"><span><i class="fa fa-envelope" aria-hidden="true"></i></span>{{data.mailId}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-6 col-md-2">
+        <h6>About Us</h6>
+        <ul class="list-unstyled">
+          <li><a href="maintenance.html">About Us</a></li>
+          <li><a href="contact.html">Partner with us</a></li>
+          <li><a href="about.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-6 col-md-2">
+        <h6>Information </h6>
+        <ul class="list-unstyled">
+          <li><a href="maintenance.html">Order</a></li>
+          <li><a href="contact.html">Delivery</a></li>
+          <li><a href="about.html">Call us</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-6 col-md-2">
+        <h6>Explore </h6>
+        <ul class="list-unstyled">
+          <li><a href="maintenance.html">News</a></li>
+          <li><a href="contact.html">Sitemap</a></li>
+
+          <li><a href="about.html">Feedbacks</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-6 col-md-2">
+        <h6>Social Media </h6>
+        <ul class="list-unstyled">
+          <li>
+            <a class="pr-2" [attr.href]="data?.facebookLink" target="_blank" ><i class="fa fa-camera-retro fa-lg"></i></a>
+            <a class="pr-2" [attr.href]="data?.googlePlusLink" target="_blank"><i class="fa fa-twitter-square fa-2x social"></i></a>
+            <a class="pr-2" [attr.href]="data?.twitterLink" target="_blank"><i class="fa fa-google-plus-square fa-2x social"></i></a>
+            <a class="pr-2" [attr.href]="data?.pintrestLink" target="_blank"><i class="fa fa-pinterest  fa-2x social"></i></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

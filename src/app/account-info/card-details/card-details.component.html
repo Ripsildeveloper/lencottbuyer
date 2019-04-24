@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-md-12 py-5 border">
+      <h4 class="pb-4">Add New Card</h4>
+      <form [formGroup]="cardDetailsForm" novalidate (ngSubmit)="!cardDetailsForm.invalid && onSubmit()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Card Number" maxlength="10" 
+                formControlName="cardNumber" required>
+                <button mat-button matSuffix mat-icon-button aria-label="Card Number">
+                  <mat-icon>credit_card</mat-icon>
+                </button>
+                <mat-error *ngIf="cardDetailsForm.controls['cardNumber'].errors?.required">
+                  Card Number is
+                  <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Card Name" maxlength="20" formControlName="cardName" required>
+                  <button mat-button matSuffix mat-icon-button aria-label="Card Namw">
+                    <mat-icon>account_circle</mat-icon>
+                  </button>
+                  <mat-error *ngIf="cardDetailsForm.controls['cardName'].errors?.required">
+                    Card Name is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <h6>Expiry Month</h6>
+              <mat-form-field>
+                  <mat-label>Month</mat-label>
+                  <mat-select formControlName="expiryMonth">
+                    <mat-option *ngFor="let month of expiryMonth" [value]="month">
+                      {{month}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+              <h6>Expiry Year</h6>
+              <mat-form-field>
+                  <mat-label>Year</mat-label>
+                  <mat-select formControlName="expiryYear">
+                    <mat-option *ngFor="let year of expiryYear" [value]="year">
+                      {{year}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+        </div>
+       
+        <div class="form-row">
+  
+          <div class="col-md-6">
+  
+            <button mat-raised-button type="button" (click)="dialogRef.close(false)" color="accent">cancel</button>
+
+          </div>
+          <div class="col-md-6">
+            <p class="float-right">
+                <button mat-raised-button color="primary" type="submit">Save</button>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

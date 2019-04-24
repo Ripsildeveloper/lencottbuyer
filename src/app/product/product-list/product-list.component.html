@@ -1,0 +1,151 @@
+<div class="row">
+  <div class="col-md-2 filterRow">
+    <div class="container-fluid mt-5">
+      <div class="row" style="margin-left: 5px;">
+        <div class="col-md-12">
+
+          <p><b>Filters</b></p>
+
+          <br>
+        </div>
+        <br>
+        <div class="col-md-12">
+          <p><b>Price</b></p>
+          <div class="row">
+            <div class="col-md-12">
+              <ul style="
+                padding-left: 0px;
+            ">
+                <li *ngFor="let data of productSettingsPrice; let i = index;">
+                  <mat-checkbox color="primary" (change)="showPriceOptions($event, i)" [value]="data"
+                    [checked]="selectedPriceCheckBox === i">{{data}}</mat-checkbox>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <br>
+        </div>
+
+        <div class="col-md-12">
+
+          <p><b>Color</b></p>
+          <div class="row">
+            <div class="col-md-12">
+              <ul style="
+                padding-left: 0px;
+            ">
+                <li *ngFor="let data of productSettingsColor; let i = index">
+                  <mat-checkbox color="primary" (change)="showColorOptions($event, i)" [value]="data"
+                    [checked]="selectedCheckBox === i">{{data}}</mat-checkbox>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <br>
+        </div>
+        <div class="col-md-12">
+
+          <p><b>Material</b></p>
+          <div class="row">
+            <div class="col-md-12">
+              <ul style="
+                padding-left: 0px;
+            ">
+                <li *ngFor="let data of productSettingsMaterial; let i = index">
+                  <mat-checkbox color="primary" (change)="showMaterialOptions($event, i)" [value]="data"
+                    [checked]="selectedMaterialCheckBox === i">{{data}}</mat-checkbox>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-10">
+    <div class="container-fluid mt-5">
+      <mat-paginator [length]="totalSize" [hidePageSize]="true" [pageIndex]="currentPage"></mat-paginator>
+      <div *ngIf="productModel">
+        <div class="row">
+          <nav class="nav">
+            <a class="nav-link " style="font-size: 12px; "><b>Sort By</b></a>
+            <div *ngFor="let data of sortBy">
+              <ul class="float-left">
+                <li class="nav-link" style="font-size: 12px;" [class.selectedSort]="data.type === selectedSortVal"
+                  (click)="sortType(data.type)">
+                  <b> {{data.value}}</b></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="row" style="cursor: pointer">
+          <div class="col-md-3 col-6" *ngFor="let product of productModel"
+          (click)="viewSingleProduct(product._id)">
+            <a class="product">
+              <img [src]="product.productImageName[0]"
+               >
+            </a>
+            <div>
+              <p>{{ product.productName }}</p>
+              <p><b>&#x20a8; {{ product.price }}</b></p>
+              
+            </div>
+            <div>
+                Size: <span *ngFor="let size of product?.size">{{size.sizeName}} </span>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+         
+          <div class="col-sm-4" *ngFor="let product of productModel">
+            <div class="card-control">
+              <mat-card>
+                <div class="card">
+                  <div class="zoom">
+                    <img class="img-fluid" alt="smaple image" [src]="product.productImageName[0]" (click)="viewSingleProduct(product._id)">
+                  </div>
+                  <div class="car-body">
+                    <h4 class="card-title">{{ product.productName }}</h4>
+                    <div>
+                      <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> {{ product.price }} / piece</p>  
+                    </div>
+                   
+                        <p class="card-text"> 1 set = {{ product.moq }} pieces</p>  
+                     
+                   
+                  </div>
+                </div>
+                <div class="but-cart">
+                  <div class="row">
+                    <div class="col-md-5" style="padding-top: 5px;">
+                        <div class="Detail-Views">
+                            <button mat-raised-button  class="Detail-View" (click)="viewSingleProduct(product._id)">Detail View</button>
+                          </div>
+                    </div>
+                    <div class="col-md-7" style="padding-top: 6px; padding-left: 20px;">
+                        <div class="icon-fab" >
+                            <button mat-raised-button  class="btnn" (click)="addToCart(product)">
+                           Add to Cart <i class="fa fa-cart-plus fa-1x" aria-hidden="true"></i> </button>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+
+              </mat-card>
+            </div>
+          </div>
+        </div> -->
+        <div class="page-na">
+          <mat-paginator #paginator [pageSize]="pageSize" [hidePageSize]="true" [pageSizeOptions]="[10, 100, 150]"
+            [showFirstLastButtons]="true" [length]="totalSize" [pageIndex]="currentPage" (page)="handlePage($event)"
+            class="paginator">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

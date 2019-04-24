@@ -1,0 +1,135 @@
+<div class="container-fluid footers pt-5">
+  <div class="container">
+    <div class="row footerBorder">
+      <div class="col-xs-12 col-sm-6 col-md-6 " *ngFor="let data of footerDetails">
+
+        <div>
+          <img [src]="data.logoImageName" style="width:180px"
+           alt="Logo" class="img-fluid">
+        </div>
+        <div class="footers-info mt-3">
+          <ul class="list-unstyled">
+            <li>
+              <a href="maintenance.html">
+                <span>
+                  <i class="fa fa-phone" aria-hidden="true">{{data.address}}</i>
+                </span>
+              </a>
+            </li>
+            <li><a href="contact.html">
+                <i class="fa fa-phone" aria-hidden="true">{{data.contactNo}}</i>
+              </a>
+            </li>
+            <li><a href="about.html"><span><i class="fa fa-envelope" aria-hidden="true">
+              {{data.emailId}}
+            </i></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-6 col-md-2">
+        <h6>About Us</h6>
+        <ul class="list-unstyled">
+          <li><a href="maintenance.html">About Us</a></li>
+          <li><a href="contact.html">Partner with us</a></li>
+          <li><a href="about.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-6 col-md-2">
+        <h6>Information </h6>
+        <ul class="list-unstyled">
+          <li><a href="maintenance.html">Order</a></li>
+          <li><a href="contact.html">Delivery</a></li>
+          <li><a href="about.html">Call us</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-6 col-md-2">
+        <h6>Social Media </h6>
+        <ul class="list-unstyled">
+          <li>
+            <a class="pr-2" [attr.href]="data?.facebookLink" target="_blank"><i
+                class="fa fa-facebook-square fa-2x social"></i></a>
+            <a class="pr-2" [attr.href]="data?.googlePlusLink" target="_blank"><i
+                class="fa fa-twitter-square fa-2x social"></i></a>
+            <a class="pr-2" [attr.href]="data?.twitterLink" target="_blank"><i
+                class="fa fa-google-plus-square fa-2x social"></i></a>
+            <a class="pr-2" [attr.href]="data?.pintrestLink" target="_blank"><i class="fa fa-pinterest  fa-2x social"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="footer">
+
+<div class="container-fluid footers pt-5" style="background-color: aquamarine;">
+    <div class="container">
+
+
+<footer class="page-footer font-small blue pt-4">
+
+
+    <div class="container-fluid text-center text-md-left">
+
+      
+      <div class="row">
+
+      
+        <div class="col-md-6 mt-md-0 mt-3">
+        <div class="footer-logo">
+          <img src="../../../assets/img/logo/LENCOTT Logo.png" class="logo-footer">
+        </div>
+      
+          <h5 class="text-uppercase"></h5>
+          <p></p>
+
+        </div>
+        
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        
+        <div class="col-md-3 mb-md-0 mb-3">
+
+        
+            <h5 class="text-uppercase">About Us</h5>
+
+            <ul class="list-unstyled">
+                <li><a href="maintenance.html">About Us</a></li>
+                <li><a href="contact.html">Partner with us</a></li>
+                <li><a href="about.html">Terms & Conditions</a></li>
+            </ul>
+
+          </div>
+        
+          <div class="col-md-3 mb-md-0 mb-3">
+
+        
+            <h5 class="text-uppercase">Information </h5>
+
+            <ul class="list-unstyled">
+                <li><a href="maintenance.html">Order</a></li>
+                <li><a href="contact.html">Delivery</a></li>
+                <li><a href="about.html">Call us</a></li>
+              </ul>
+
+
+          </div>
+        
+
+      </div>
+      
+
+    </div>
+  
+
+  </footer>
+</div>
+ -->
+
+
+

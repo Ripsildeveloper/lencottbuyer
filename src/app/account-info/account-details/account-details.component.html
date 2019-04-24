@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-3">
+
+    <nav class="d-none d-md-block bg-light sidebar ">
+      <div class="sidebar-sticky filterRow">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active">
+              <h6>ACCOUNT</h6><span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link navText" 
+              routerLink="/account/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navText" 
+            routerLink="/account/listaddress">
+              Address
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navText"
+             routerLink="/account/listcard">
+              Card
+            </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active">
+                <h6>Order Details</h6><span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navText" routerLink="/account/order">
+                  Order
+                </a>
+              </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>

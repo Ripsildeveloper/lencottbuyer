@@ -1,0 +1,57 @@
+
+  
+@media screen and (max-width: 600px) {
+    .imageSize
+    {
+        width: 100%;
+        height: 200px;
+    } 
+  }
+
+  @media screen and (min-width: 600px) {
+    .imageSize
+    {
+        width: 100%;
+        height: 500px;
+    } 
+    
+  }
+
+.img-banner{
+  height: 450px;
+  width: 100%;
+}
+
+.poster-img{
+  width: 100%;
+  height: 450px;
+}
+.h1-tag{
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+}
+
+.h1-tag0{
+  font-size: 27px;
+  color: rgb(235, 16, 16);
+}
+.content{
+  color: rgb(145, 145, 145);
+}
+.tag-h2{
+  text-align: center;
+}
+.tag-h11{
+  text-align: center;
+  padding-bottom: 20px;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+.tag-h2{
+  padding-bottom: 25px;
+}
+.numb{
+text-align: center;
+font-size: 60px;
+color: gray;
+}

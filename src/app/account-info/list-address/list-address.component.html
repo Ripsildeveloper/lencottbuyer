@@ -1,0 +1,124 @@
+<form [formGroup]="addressForm">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="addButton" (click)="addAddress()">
+        ADD ADDRESS
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row">
+  <div class="col-md-12" class="listOfAddress">
+    <div>
+      ADD ADDRESS
+
+    </div> -->
+  <div class="row gridRow border p-2" *ngFor="let address of addressModel">
+    <div class="col-md-12" *ngIf="!address.editAddress">
+      <div class="text-secondary">
+        <strong>{{address.name}}</strong>
+      </div>
+      <div>{{address.building }}</div>
+      <div>{{address.streetAddress }}</div>
+      <div>{{address.landmark }}</div>
+      <div>{{address.city }}</div>
+      <div>{{address.state }}</div>
+      <div><span>Mobile: </span>{{address.mobileNumber }}</div>
+    </div>
+    <div class="col-md-12" *ngIf="address.editAddress">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Name" [value]="regModel.name || null"
+             formControlName="name" required #name>
+            <button mat-button matSuffix aria-label="name">
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="mobile number" [value]="regModel.mobileNumber || null" formControlName="mobileNumber"
+            #mobileNumber
+              required>
+            <button mat-button matSuffix aria-label="mobileNumber">
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="building" [value]="address.building"
+             formControlName="building" #building required>
+            <button mat-button matSuffix aria-label="building">
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="streetAddress" [value]="address.streetAddress"
+            #streetAddress formControlName="streetAddress"
+              required>
+            <button mat-button matSuffix aria-label="streetAddress">
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="landmark"  [value]="address.landmark" formControlName="landmark" 
+            #landmark required>
+            <button mat-button matSuffix aria-label="landmark">
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="City" [value]="address.city" formControlName="city" 
+            #city
+             required>
+            <button mat-button matSuffix aria-label="city">
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="State" [value]="address.state" formControlName="state" 
+            #state
+            required>
+            <button mat-button matSuffix aria-label="state">
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Pincode" [value]="address.pincode" formControlName="pincode" 
+              #pincode
+              required>
+              <button mat-button matSuffix aria-label="pincode">
+              </button>
+            </mat-form-field>
+          </div>
+      </div>
+      <div class="col-md-12  border-top">
+        <div class="row">
+          <div class="col-md-6 actionClass"
+           (click)="updateAddress(address, name, mobileNumber, building, streetAddress, landmark, city, state, pincode )">
+            Update
+          </div>
+          <div class="col-md-6 actionClass" (click)="cancelAddress(address)">
+            Cancel
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 border-top" *ngIf="!address.editAddress">
+      <div class="row">
+        <div class="col-md-6 actionClass" (click)="editAddress(address._id)">
+          Edit
+        </div>
+        <div class="col-md-6 actionClass" (click)="deleteAddress(address._id)">
+          Delete
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- </div> -->
+<!-- </div> -->

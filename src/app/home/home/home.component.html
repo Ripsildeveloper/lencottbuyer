@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-12"
+     *ngFor="let bannerImg of banner; let i = index" style="padding: 0px">
+        <div *ngIf="slideIndex === i">
+            <img [src]="bannerImg.bannerImage" class="img-fluid">
+        </div>
+    </div>
+</div>
+<a class="prev" (click)="minusSlides(slideIndex)">&#10094;</a>
+<a class="next" (click)="plusSlides(slideIndex)">&#10095;</a>
+<app-promotion [promotionsModel]="promotion" ></app-promotion>
+<app-hot-product [hotProduct]="hotProduct"></app-hot-product>

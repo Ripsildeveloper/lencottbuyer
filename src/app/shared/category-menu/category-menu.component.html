@@ -1,0 +1,69 @@
+<!-- <nav class="navbar  navbar-expand-lg   border-dark navbar-light bg-light">
+  <a class="navbar-brand d-sm-none d-md-none d-xs-block" href="#">Category</a>
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" 
+  id="navbarSupportedContent" 
+  [ngClass]="{'show': navbarShow}">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown" (mouseenter)="toggleDropdown(cat)" 
+      *ngFor="let cat of superCategory; let i = index">
+        <a class="nav-link dropdown-toggle" [class.selected]="cat === selected"
+         role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{ cat.categoryName | titlecase}}
+        </a>
+        <div *ngIf="cat._id === selectedDropDown"
+         (mouseleave)="toggleDropdownLeave(cat)">
+          <div class="dropdown-menu" [ngClass]="{'show': cat._id === selectedDropDown}">
+            <div *ngFor="let subcat of cat.mainCategory">
+              <a class="dropdown-item" (click)="viewCategory(subcat._id)">{{subcat.mainCategoryName | titlecase}}</a>
+            </div>
+          </div>
+        </div>
+        
+      </li>
+      
+    </ul>
+   
+  </div>
+</nav>
+
+ -->
+<nav class="navbar  navbar-expand-lg   border-dark navbar-light bg-light">
+  <a class="navbar-brand d-sm-none d-md-none d-xs-block" href="#">Category</a>
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbar"
+    aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar"
+   [ngClass]="{'show': navbarShow}">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown megamenu-li
+      " (mouseenter)="toggleDropdown(cat)" *ngFor="let cat of superCategory; let i = index">
+        <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">{{ cat.categoryName | titlecase}}</a>
+        <div class="dropdown-menu megamenu" aria-labelledby="dropdown"
+          [ngClass]="{'show': cat._id === selectedDropDown }" 
+          *ngIf="cat._id === selectedDropDown"
+          (mouseleave)="toggleDropdownLeave(cat)">
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-lg-3" 
+            *ngFor="let maincat of cat.mainCategory" >
+              <h5 class="catMenu">{{maincat.mainCategoryName}}</h5>
+              <a class="dropdown-item subMenu" (click)="viewCategory(subcat._id)"
+              *ngFor="let subcat of maincat.subCategory">
+                {{subcat.subCategoryName}}</a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

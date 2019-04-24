@@ -1,0 +1,16 @@
+  
+@media screen and (max-width: 600px) {
+    .imageSize
+    {
+        width: 330px;
+        height: 80px;
+    } 
+  }
+
+  @media screen and (min-width: 600px) {
+    .imageSize
+    {
+        width: 100%;
+        height: 220px;
+    }  
+  }

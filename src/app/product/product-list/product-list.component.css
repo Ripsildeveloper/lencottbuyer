@@ -1,0 +1,152 @@
+.buyProduct {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+    background-color: #bf0711
+}
+.displayBuyNow {
+    align-self: stretch;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding-left: 8px;
+    padding-right: 8px;
+    float: right
+}
+
+.selectedSort{
+    color:  #282f43;
+    border: 1px solid  #282f43;
+    /* font-weight: bold; */
+}
+.product img {
+    position: relative;
+    display: block;
+    width: 100%;
+    transition: opacity 0.35s;
+    background-size: unset;
+    min-height: 210px;
+}
+.product {
+    color: #303238;
+    border: 1px solid #e9e9eb;
+    display: block;
+    margin-bottom: 25px;
+    max-height: 369px;
+}
+ul {
+    list-style-type: none;
+  }
+.card-control{
+    padding: 18px;
+  
+}
+
+.card-footer{
+    width: 100%;
+    height: 250px;
+    background: rgb(255, 255, 255);
+    
+}
+
+.img-fluid{
+    
+    width: 230px;
+    height: 200px;
+    align-items: center;
+    padding-left: 12px;
+    padding-top: 20px;
+    padding: 10px;
+    padding-right: 15px;
+ 
+}
+
+/* .card-title{
+    font-size: 20px;
+    padding-left: 25px;
+}
+.card-text{
+    padding-left: 25px;
+} */
+
+/* .paginator{
+
+    padding-bottom: 20px;
+    padding-top: 50px;
+} */
+.page-na{
+    padding-top: 95px;
+    width: 100%;
+    padding: 19px;
+    
+   
+}
+.paginator
+{
+    border: #bf0711;
+    border-radius: 22%;
+}
+.card-title{
+    font-size: 15px;
+    padding-left: 25px;
+}
+.card-text{
+padding-left: 25px;
+
+}
+.btnn{
+
+width: 120px;
+font-size: 14px;
+border: 2px;
+border-radius: 30px;
+
+
+}
+.fa-1x{
+    color: rgb(0, 0, 0);
+    padding-left: 2px;
+    
+}
+.but-detail{
+   
+    padding-bottom: 90px;
+}
+.icon-fab{
+    padding-left: 0px;
+    padding-right: 20px;
+}
+.Detail-View{
+width: 110px;
+border: 2px;
+border-radius: 30px;
+}
+
+.zoom {
+    transition: transform .2s;
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.3);
+    -webkit-transform: scale(1.3); 
+    transform: scale(1.3); 
+  }
+
+  .sidenav {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+  }
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+  }

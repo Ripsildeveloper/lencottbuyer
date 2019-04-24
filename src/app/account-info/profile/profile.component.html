@@ -1,0 +1,117 @@
+
+<div class="row">
+  <!-- <div *ngIf="loginUser">Please Login</div> -->
+    <div class="col-md-12 py-5 border">
+      <h4 class="pb-4">Edit profile Details</h4>
+      <form [formGroup]="profileForm" novalidate (ngSubmit)="!profileForm.invalid && onSubmit()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="First Name" maxlength="20" formControlName="firstName" required>
+                  <button mat-button matSuffix mat-icon-button aria-label="First Name">
+                    <mat-icon>account_circle</mat-icon>
+                  </button>
+                  <mat-error *ngIf="profileForm.controls['firstName'].errors?.required">
+                    firstName is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Last Name" maxlength="20" formControlName="lastName" required>
+                  <button mat-button matSuffix mat-icon-button aria-label="Last Name">
+                    <mat-icon>account_circle</mat-icon>
+                  </button>
+                  <mat-error *ngIf="profileForm.controls['lastName'].errors?.required">
+                    lastName is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="email" maxlength="20" formControlName="emailId" [required]="false">
+                  <button mat-button matSuffix mat-icon-button aria-label="email">
+                   <!--  <mat-icon>location_on</mat-icon> -->
+                  </button>
+                </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Mobile Number" maxlength="10" formControlName="mobileNumber" required>
+                  <button mat-button matSuffix mat-icon-button aria-label="Mobile Number">
+                    <mat-icon>phone</mat-icon>
+                  </button>
+                  <mat-error *ngIf="profileForm.controls['mobileNumber'].errors?.required">
+                    Mobile Number is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Password" formControlName="password" required>
+                  <button mat-button matSuffix mat-icon-button aria-label="Password">
+                    <mat-icon>remove_red_eye</mat-icon>
+                  </button>
+                  <mat-error *ngIf="profileForm.controls['password'].errors?.required">
+                    Password is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="location" maxlength="20" formControlName="location" required>
+                  <button mat-button matSuffix mat-icon-button aria-label="User Name">
+                    <mat-icon>location_on</mat-icon>
+                  </button>
+                  <mat-error *ngIf="profileForm.controls['location'].errors?.required">
+                    location is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dateOfBirth" required>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="gender" maxlength="20" formControlName="gender" required>
+                  <button mat-button matSuffix mat-icon-button aria-label="User Name">
+                    <mat-icon></mat-icon>
+                  </button>
+                  <mat-error *ngIf="profileForm.controls['gender'].errors?.required">
+                    gender is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+          </div>
+        </div>
+        <div class="form-row">
+  
+          <div class="col-md-6">
+  
+            <!-- <button mat-raised-button type="button" (click)="dialogRef.close(false)" color="accent">cancel</button> -->
+  
+          </div>
+          <div class="col-md-6">
+            <p class="float-right">
+              <button mat-raised-button color="primary" type="submit">Update</button>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
